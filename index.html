@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/mainstyles.css">
+    <link rel="stylesheet" href="styles/popup.css">
+    <link rel="stylesheet" href="styles/media.css">
+    <link rel="stylesheet" href="styles/slider.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap" rel="stylesheet">
+    <script src="swiffy-slider-main/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
+    <link href="swiffy-slider-main/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="scripts/closer.js" crossorigin="anonymous" defer></script>
+
+    <link rel="icon" type="image/x-icon" href="/images/tom_orion_znak.svg">
+    <title>Nábor TOM Orion</title>
+    <meta name="description"
+        content="Tato stránka je určena pro informace pro nábor do turistického oddílu TOM Orion pro rok 2023">
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <!-- Logo + description -->
+            <div class="logo">
+                <a href="http://tomorion.cz/" target="_blank">
+                    <img src="images/tom_orion_znak.svg" alt="logo Turistického oddílu mládeže Orion" class="logo__img">
+                </a>
+                <a href="http://tomorion.cz/" target="_blank">
+                    <div class="logo__title">
+                        <h1 class="logo__heading"> Turistický oddíl Orion </h1>
+                        <p class="logo__desc">v Liberci od roku 1982. </p>
+                    </div>
+                </a>
+                <a href="https://www.a-tom.cz/" target="_blank">
+                    <img src="images/logo_asociace_tom.svg" alt="logo Asociace Turistických oddílů mládeže"
+                        class="logo__img">
+                </a>
+            </div>
+            <!-- Navbar-->
+            <menu class="nav">
+                <li class="nav__item">
+                    <a href="#o-nas">O nás</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#napsali-o-nas">Více o nás</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#kontakt">Kontakt</a>
+                </li>
+                <li class="nav__item nav__item--icon nav__item--firsticon">
+                    <a href="https://www.facebook.com/TOMOrion.Liberec/" target="_blank">
+                        <img src="images/facebook_logo.svg" alt="logo Facebook" class="nav__item__img--icon">
+                    </a>
+                </li>
+                <li class="nav__item nav__item--icon">
+                    <a href="https://www.instagram.com/tom.orion/" target="_blank">
+                        <img src="images/instagram_logo.svg" alt="logo Instagram" class="nav__item__img--icon">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main class="content">
+        <!-- Popup -->
+        <div class="modal" id="modal-one">
+            <div class="modal-dialog">
+                <div class="modal-header">
+                    <span class="btn-close">×</span>
+                </div>
+                <div class="modal-body">
+                    <!-- Form -->
+                    <h2 id="message1" class="hidden"></h2>
+                    <form id="form1" class="form" action="mail.php" method="POST">
+                        <h2 class="form__heading">Zaslat informace o nejbližší akci:</h2>
+                        <label class="form__label">Váš e-mail:</label>
+                        <input class="form__input" type="email" placeholder="jannovak@email.cz" name="email">
+                        <input class="form__button" type="submit" name="poslat" value="Poslat">
+                    </form>
+                    <script>
+                        const params = new URLSearchParams(document.location.search);
+                        const state = params.has("success") ?
+                                         parseInt(params.get("success"))
+                                         : -1;
+                                         console.log(params);
+                        console.log(state)
+                        const msg1 = document.getElementById("message1");
+                        if (state===0) {
+                            msg1.innerText="Zkuste to prosím znovu, objevila se nějaká chyba"
+                            msg1.classList.remove("hidden")
+                            setTimeout(() => {msg1.classList.add("hidden")}, 5000);
+                        }
+                        if (state===1) {
+                            msg1.innerText="Brzy se Vám ozveme!"
+                            msg1.classList.remove("hidden")
+                            setTimeout(() => {msg1.classList.add("hidden")}, 5000);
+                        }
+                        if (state===3) {
+                            msg1.classList.add("hidden")
+                            setTimeout(() => {msg1.classList.remove("hidden")}, 5000);
+                        }
+                        
+                      
+                    </script>
+                </div>
+            </div>
+        </div>
+        <!-- First section -->
+        <section id="o-nas" class="section section--first">
+            <h2 class="section__heading">Zažije s námi dobrodružství i Vaše dítě?</h2>
+            <iframe id="ytplayer" allow="fullscreen;" src="https://www.youtube.com/embed/e1yggKKB_6k"
+                title="Propagační video"></iframe>
+        </section>
+        <!-- Second section -->
+        <section class="section section--second">
+            <h2 class="section__heading">A co pořádáme?</h2>
+            <!-- Cards of events -->
+            <div class="cards">
+                <figure class="imageblock imageblock--afirst">
+                    <figcaption class="imageblock__caption">
+                        Schůzky
+                    </figcaption>
+                    <p class="imageblock__text">
+                        Společně se scházíme jednou týdně na základní škole Ještědské. Hrajeme spoustu her, střílíme z
+                        luku, a rozvíjíme v oddílových dovednostech. Společně nás čeká spousta legrace a kamarádů.
+                        Končíme u hlavního vchodu základní školy.
+                    </p>
+                </figure>
+                <figure class="imageblock imageblock--asecond">
+                    <figcaption class="imageblock__caption">
+                        Výpravy
+                    </figcaption>
+                    <p class="imageblock__text">
+                        Jednou za měsíc se vydáváme společně na výpravu někam v libereckém kraji, někdy i na více dní.
+                        Učíme se tam rozdělávat oheň, zažíváme společné dobrodružství ve skalách na vodě nebo si hrajeme
+                        legrační hry na louce nebo v lese.
+                    </p>
+                </figure>
+                <figure class="imageblock imageblock--athird">
+                    <figcaption class="imageblock__caption">
+                        Tábory
+                    </figcaption>
+                    <p class="imageblock__text">
+                        Na začátku července máme společný čtrnáctidenní tábor. Bydlíme ve stanech tee-pee. Na táboře
+                        zažíváme dobrodružství v originální příběhová etapová hra, dále netradiční hry a sporty, noční
+                        hlídky, indiánská sauna i všichni společně se podílíme na chodu tábora. </p>
+                </figure>
+            </div>
+        </section>
+        <!-- Third section -->
+        <section id="napsali-o-nas" class="section section--third">
+            <h2 class="section__heading">Co o nás řekli?</h2>
+            <p class="section__text">
+                Oddíl během čtyřiceti let své existence ovlivnil stovky dětí v Liberci a jeho okolí.
+            </p>
+            <p class="section__text">
+                Náš oddíl vychoval schopné a zodpovědné dívky a muže.
+            </p>
+            <!-- Slider -->
+            <div
+                class="swiffy-slider slider-nav-dark slider-nav-autoplay slider-nav-autopause slider-indicators-round slider-indicators-dark">
+                <ul class="slider-container">
+                    <li class="slide">
+                        <img class="slide__img" src="images/skubanek_kytara_ohen_letni_tabor.webp"
+                            alt="žena kytara oheň děti">
+                        <blockquote>
+                            <q class="slide__text">
+                                Prošla jsem Orionem jako malá holka a teenager, pak jsem se s ním na pár let
+                                rozloučila. Dnes jsem mezi rádci a snažím se,
+                                aby byl oddíl pro všechny děti co nejlepším místem. Oddíl je pro mne a mou dceru
+                                jako druhá rodina se vším co k tomu patří.
+                            </q>
+                            <div class="author">
+                                <div class="author--line"></div>
+                                <span class="author--sign">Škubánek</span>
+                            </div>
+                        </blockquote>
+                    </li>
+                    <li class="slide">
+                        <img class="slide__img" src="images/bjetka_vysvetluje_nastup.webp"
+                            alt="žena děti vysvětluje nástup">
+                        <blockquote>
+                            <q class="slide__text">
+                                Oddíl mě vychoval k šetrnému chování k přírodě a lidem, respektu, neustálému učení a
+                                zvládání neobvyklých situací. Naučil mě milovat, být vděčná a odpouštět. Oddíl mě naučil
+                                poznávat přírodu kolem sebe a rozumět jí.
+                            </q>
+                            <div class="author">
+                                <div class="author--line"></div>
+                                <span class="author--sign">Bětka</span>
+                            </div>
+                        </blockquote>
+                    </li>
+                    <li class="slide">
+                        <img class="slide__img" src="images/deti_vandr_mapa_kartografie.webp"
+                            alt="děti mapa muž vyslětluje">
+                        <blockquote>
+                            <q class="slide__text">
+                                V druhé třídě jsem začal chodit do oddílu Orion se svým nejlepším kamarádem. Trávili
+                                jsme spoustu víkendů hraním her a výletů do přírody. Strávil jsem v oddíle dalších
+                                jedenáct let. Výlety do přírody, láska a úcta k ní a přátelé na celý život jsou to, co
+                                mi oddíl dal.
+                            </q>
+                            <div class="author">
+                                <div class="author--line"></div>
+                                <span class="author--sign">Zubr</span>
+                            </div>
+                        </blockquote>
+                    </li>
+                    <li class="slide">
+                        <img class="slide__img" src="images/skukum_a_zena_u_ohne.webp" alt="muž žena oheň">
+                        <blockquote>
+                            <q class="slide__text">
+                                V oddíle se mi líbila pestrost naší činnosti - nejen hry, ale i práce s mapami, stezky
+                                odvahy, uzlování. Jako rádce a později náčelník jsem se snažil o všestranný rozvoj dětí
+                                - pohyb, nové znalosti a umění. Díky oddílu jsem objevil spoustu krásných míst a získal
+                                mnoho kamarádů.
+                            </q>
+                            <div class="author">
+                                <div class="author--line"></div>
+                                <span class="author--sign">Skukum</span>
+                            </div>
+                        </blockquote>
+                    </li>
+                    <li class="slide">
+                        <img class="slide__img" src="images/vedouci_julie_alfa.webp" alt="žena busta">
+                        <blockquote>
+                            <q class="slide__text">
+                                Oddíl mi dal mnoho - skvělou partu lidí, kde můžu být sama sebou bylo to naprosto jiné
+                                oproti dětem ve škole. Naučil mě najít si místo, kde se cítím dobře. Překonávala jsem
+                                mnohokrát svou komfortní zónu na různorodých akcích a dnes si užiju i mokré boty nebo
+                                zimu.
+                            </q>
+                            <div class="author">
+                                <div class="author--line"></div>
+                                <span class="author--sign">Julča</span>
+                            </div>
+                        </blockquote>
+                    </li>
+                    <li class="slide">
+                        <img class="slide__img" src="images/dite_vedouci_lucerna.webp" alt="dítě žena vedoucí lucerna">
+                        <blockquote>
+                            <q class="slide__text">
+                                Orion mi dal zážitky, na které ráda vzpomínám, některý z nich byly významnou lekcí, jiné
+                                byly pouze o radosti a smíchu. Je to takovej minisvět, kterej si v sobě skrz vzpominky
+                                pořád opatruju.
+                            </q>
+                            <div class="author">
+                                <div class="author--line"></div>
+                                <span class="author--sign">Bukí</span>
+                            </div>
+                        </blockquote>
+                    </li>
+                    <li class="slide">
+                        <img class="slide__img" src="images/deti_vedouci_tom_orion.webp" alt="děti vedoucí obličeje">
+                        <blockquote>
+                            <q class="slide__text">
+                                Oddíl mi pomohl být tím, kým jsem teď. Díky němu jsem zažila své první tábor v teepee,
+                                naučila se vázat uzle, nebát se na nočních hlídkách. V oddíle jsem poznala první lásku a
+                                nabyla zodpovědnosti. Jsem vděčná, že v oddíle najde místo každý.
+                            </q>
+                            <div class="author">
+                                <div class="author--line"></div>
+                                <span class="author--sign">Aicha</span>
+                            </div>
+                        </blockquote>
+                    </li>
+                    <li class="slide">
+                        <img class="slide__img" src="images/lachtan_vandr_luzicke_hory.webp"
+                            alt="žena kouká pokácené stromy">
+                        <blockquote>
+                            <q class="slide__text">
+                                Oddíl mi dal hodně. Vychoval mě a zanechal mnoho nezapomenutelných vzpomínek. V
+                                dospívání jsem překonávala sebe sama výzvami, což mi pomohlo osobně se formovat a
+                                posunout vpřed. Jako rádce a náčelník jsem se naučila efektivně řešit různé komplikace.
+
+                            </q>
+                            <div class="author">
+                                <div class="author--line"></div>
+                                <span class="author--sign">Lachtan</span>
+                            </div>
+                        </blockquote>
+                    </li>
+                    <li class="slide">
+                        <img class="slide__img" src="images/roveri_vandr_most_polsko.webp" alt="děti most příroda">
+                        <blockquote>
+                            <q class="slide__text">
+                                Do oddílu jsem začal chodit až ve dvanácti letech. Naučil jsem se tady mnoho dovedností,
+                                jak se chovat k přírodě, ale také jak se chovat ve společnosti a vztazích. Oddíl je pro
+                                mě jako druhá rodina se vřelým přijetím a ochranou před nepřátelským světem.
+                            </q>
+                            <div class="author">
+                                <div class="author--line"></div>
+                                <span class="author--sign">Prokop</span>
+                            </div>
+                        </blockquote>
+                    </li>
+                    <li class="slide">
+                        <img class="slide__img" src="images/klacek_lezecka_vybava.webp" alt="muž lezecká výbava">
+                        <blockquote>
+                            <q class="slide__text">
+                                Vzpomínám na množství krásných zážitků ze dnů strávených v přírodě, na přátele, se
+                                kterými se stále setkávám, i na lidské vlastnosti a hodnoty jako ochotu pomáhat,
+                                samostatnost a vztah k přírodě, které jsem získal díky oddílu.
+                            </q>
+                            <div class="author">
+                                <div class="author--line"></div>
+                                <span class="author--sign">Klacek</span>
+                            </div>
+                        </blockquote>
+                    </li>
+                    <li class="slide">
+                        <img class="slide__img" src="images/tyna_clen_turistickeho_oddilu.webp" alt="žena busta">
+                        <blockquote>
+                            <q class="slide__text">
+                                Oddíl je pro mě jako druhá rodina. Můžeme si říct vše a nikdo nás nepoučuje, ale vždy si
+                                mě každý vyslechl. I když teď už nemám moc času, tak vždy ráda dorazím na nějakou akci a
+                                zavzpomínám co jsem zažila jako dítě.
+                            </q>
+                            <div class="author">
+                                <div class="author--line"></div>
+                                <span class="author--sign">Týna</span>
+                            </div>
+                        </blockquote>
+                    </li>
+                    <li class="slide">
+                        <img class="slide__img" src="images/yetti_vyprava.webp" alt="dav žena brýle">
+                        <blockquote>
+                            <q class="slide__text">
+                                V oddíle jsem prožila své dětství a zažila mnoho úžasných zážitků a potkala mnoho lidí.
+                                Díky oddílu jsem získala mnoho cenných zkušeností, které mě formovaly a pomohly mi stát
+                                se tím, kým jsem dnes. Oddíl pro mě znamená mnoho a jsem mu za všechno, co mi dal,
+                                vděčná
+                            </q>
+                            <div class="author">
+                                <div class="author--line"></div>
+                                <span class="author--sign">Yetti</span>
+                            </div>
+                        </blockquote>
+                    </li>
+                    <li class="slide">
+                        <img class="slide__img" src="images/deti_jidlo_kotlik_ohen.webp" alt="děti jedění kotlík">
+                        <blockquote>
+                            <q class="slide__text">
+                                Chodím do oddílu ráda, protože je to skvělá parta lidí a máme možnost trávit čas v
+                                přírodě. Oddíl mi dává příležitost prožívat nezapomenutelné chvíle s přáteli a zároveň
+                                se učit novým věcem. Jsem ráda, že tam mohu trávit svůj volný čas.
+                            </q>
+                            <div class="author">
+                                <div class="author--line"></div>
+                                <span class="author--sign">Zuzka</span>
+                            </div>
+                        </blockquote>
+                    </li>
+                    <li class="slide">
+                        <img class="slide__img" src="images/smrk_vandr_roveri.webp" alt="ležící děti hvězdice">
+                        <blockquote>
+                            <q class="slide__text">
+                                Každý tábor, na který jsem jel, jsem si fakt užil. I když jsem jezdil jen na tábory, byl
+                                jsem vždy přijat jako kamarád, se kterým se potkávají každý den. Oddíl pro mě znamená
+                                spoustu zábavy a nových zážitků, ale také přátelství a podporu od ostatních.
+                            </q>
+                            <div class="author">
+                                <div class="author--line"></div>
+                                <span class="author--sign">Sojka</span>
+                            </div>
+                        </blockquote>
+                    </li>
+                    <li class="slide">
+                        <img class="slide__img" src="images/letni_tabor_slavnostni_ohen_komunita.webp"
+                            alt="děti okolo ohně">
+                        <blockquote>
+                            <q class="slide__text">
+                                I když jsem v oddílu nebyl moc dlouho, zažil jsem v něm spoustu zážitků. V oddílu jsou
+                                skvělí lidé . Mrzí mě, že už nemám čas chodit do oddílu. Pokud chcete poznat nové a
+                                skvělé lidi a zažít spoustu zábavy, oddíl je skvělé místo, kde tohle všechno je :D. </q>
+                            <div class="author">
+                                <div class="author--line"></div>
+                                <span class="author--sign">Radek</span>
+                            </div>
+                        </blockquote>
+                    </li>
+                </ul>
+                <!-- Slider buttons -->
+                <button type="button" class="slider-nav"></button>
+                <button type="button" class="slider-nav slider-nav-next"></button>
+                <!-- Slider indicators -->
+                <ul class="slider-indicators">
+                    <li class=""></li>
+                    <li class="active"></li>
+                    <li class=""></li>
+                    <li class=""></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </section>
+        <!-- Fourth section -->
+        <section class="section section--fourth">
+            <h2 class="section__heading">Přidá se k nám i Vaše dítě?</h2>
+            <!-- Cards of qualities -->
+            <div class="cards">
+                <figure class="imageblock imageblock--bfirst imageblock--tall">
+                    <figcaption class="imageblock__caption">
+                        Zážitky
+                    </figcaption>
+                    <p class="imageblock__text">
+                        Zažije nezapomenutelné dobrodružství.
+                    </p>
+                    <div class="imageblock__line"></div>
+                    <p class="imageblock__text">
+                        Zažije skvělé tábory a vícedenní akce.
+                    </p>
+                    <div class="imageblock__line"></div>
+                    <p class="imageblock__text">
+                        Zažije netradiční hry.
+                    </p>
+                    <p class="imageblock__text imageblock__text--last">
+                        A zažije nejen to!
+                    </p>
+                </figure>
+                <figure class="imageblock imageblock--bsecond imageblock--tall">
+                    <figcaption class="imageblock__caption">
+                        Kamarádi
+                    </figcaption>
+                    <p class="imageblock__text">
+                        Najde celoživotní kamarády.
+                    </p>
+                    <div class="imageblock__line"></div>
+                    <p class="imageblock__text">
+                        Najde partu lidí, která ho vždy příjme a podpoří.
+                    </p>
+                    <div class="imageblock__line"></div>
+                    <p class="imageblock__text">
+                        Najde férové přátele.
+                    </p>
+                    <p class="imageblock__text imageblock__text--last">
+                        Bude vědět kam patří...
+                    </p>
+                </figure>
+                <figure class="imageblock imageblock--bthird imageblock--tall">
+                    <figcaption class="imageblock__caption">
+                        Dovednosti
+                    </figcaption>
+
+                    <p class="imageblock__text">
+                        Naučí se práci se dřevem.
+                    </p>
+                    <div class="imageblock__line"></div>
+                    <p class="imageblock__text">
+                        Naučí se rozdělat oheň jednou sirkou.
+                    </p>
+                    <div class="imageblock__line"></div>
+                    <p class="imageblock__text">
+                        Naučí se přežít v přírodě.
+                    </p>
+                    <p class="imageblock__text imageblock__text--last">
+                        A naučí se mnohem více...
+                    </p>
+                </figure>
+                <figure class="imageblock imageblock--bfourth imageblock--tall">
+                    <figcaption class="imageblock__caption">
+                        Příroda
+                    </figcaption>
+                    <p class="imageblock__text">
+                        Objeví skrytou krásu přírody.
+                    </p>
+                    <div class="imageblock__line"></div>
+                    <p class="imageblock__text">
+                        Objeví zapomenutá místa naší historie.
+                    </p>
+                    <div class="imageblock__line"></div>
+                    <p class="imageblock__text">
+                        Objeví nádheru noční oblohy.
+                    </p>
+                    <p class="imageblock__text imageblock__text--last">
+                        Objeví i další...
+                    </p>
+                </figure>
+            </div>
+        </section>
+        <!-- Fifth section -->
+        <section id="kontakt" class="section section--fifth">
+            <!-- Form -->
+            <h2 id="message2" class="hidden"></h2>
+            <form id="form1" class="form" action="mail.php" method="POST">
+                <h2 class="form__heading">Zaslat informace o nejbližší akci:</h2>
+                <label class="form__label">Váš e-mail:</label>
+                <input class="form__input" type="email" placeholder="jannovak@email.cz" name="email">
+                <input class="form__button" type="submit" name="poslat" value="Poslat">
+            </form>
+        </section>
+        <script>
+             const params = new URLSearchParams(document.location.search);
+            const state = params.has("success") ?
+                                         parseInt(params.get("success"))
+                                         : -1;
+                                         console.log(params);
+                        console.log(state)
+                        const msg1 = document.getElementById("message2");
+                        if (state===0) {
+                            msg1.innerText="Zkuste to prosím znovu, objevila se nějaká chyba"
+                            msg1.classList.remove("hidden")
+                            setTimeout(() => {msg1.classList.add("hidden")}, 5000);
+                        }
+                        if (state===1) {
+                            msg1.innerText="Brzy se Vám ozveme!"
+                            msg1.classList.remove("hidden")
+                            setTimeout(() => {msg1.classList.add("hidden")}, 5000);
+                        }
+                        if (state===3) {
+                            msg1.classList.add("hidden")
+                            setTimeout(() => {msg1.classList.remove("hidden")}, 5000);
+                        }
+          
+        </script>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <div class="footer">
+            <p class="footer__text">Sledujte nás na <a href="https://www.facebook.com/TOMOrion.Liberec/"
+                    target="_blank"> Facebooku</a> a také na <a href="https://www.instagram.com/tom.orion/"
+                    target="_blank">Instagramu</a>.</p>
+            <p class="footer__copyright">Copyright © 2022 TOM Orion </p>
+        </div>
+    </footer>
+</body>
+
+</html>
