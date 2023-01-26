@@ -1,300 +1,382 @@
-/* COLORS */ 
-:root {
-    --dark_blue: #1636af;
-    --light_blue: #1e73be;
-    --gray: #3a3a3a;
-    --light_gray: #F3F3F3;
-    --red: #fe2a2a;
-    --green: #7ed957;
-    --white: #ffffff;
-    --black: #222222;
-  }
-/* HEADER */ 
-header{
-    display:initial;
+    /* COLORS */
+    :root {
+        --dark_blue: #1636af;
+        --light_blue: #1e73be;
+        --gray: #3a3a3a;
+        --light_gray: #F3F3F3;
+        --red: #fe2a2a;
+        --green: #7ed957;
+        --white: #ffffff;
+        --black: #222222;
+    }
 
-}
-.msg{
-    color: #fe2a2a;
-}
-.header{
-    display:initial;
-}
-header a { 
-    color: var(--black);
-    text-decoration: none;
-    margin-top: 15px;
-} 
-/* Logo + description */
+    /* HEADER */
+    header {
+        display: initial;
 
-.logo { 
-    justify-content: center;
-    display: flex;
-    flex-direction: row;
-    margin: 0px 15px 0px 15px;    
-} 
-.logo__desc{
-    margin-top: 2px;
-    text-align: center;
-}
-.logo__heading{
-    text-align: center;
-    margin: 0px 0px 5px 0px;
-}
-.logo__img{
-    width: 50px;
-    height: 80px;
-    margin: 0px 2px 0px 10px;
-}
-.logo__title  { 
-    display: block;
-    width: fit-content;
-} 
-.logo_heading{
-    margin: 2px;
-}
-/* NAVBAR */
-.nav{
-    display: flex; 
-    list-style: none;
-    border-bottom: 2px solid var(--dark_blue);
-    padding-left: 75px; 
-    justify-content: center;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 9;
-    background-color: var(--white);
-    padding: 5px;
-}
-.nav__item{
-    margin: 0% 2% 0% 2%;
-    font-size: 19px;
-    
-}
-.nav__item--icon{
-    margin: 0px 5px 0px 5px;
-}
-.nav__item--firsticon{
-    margin-left: 5%;
-}
-.nav__item__img--icon{
-    width: 30px;
-}
-/* CONTENT */ 
+    }
 
-body { 
-    font-family: 'Dosis', sans-serif;
-    margin: 20px 0px 0px 0px;
-    font-size: 17px;
-}
-.section{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin: 10px;
-}
-.section__text{
-    margin: 0px 10px 0px 10px;
-}
+    .header {
+        display: initial;
+    }
 
-.cards{
-   display: flex;
-   flex-direction: row;
-   flex-wrap: wrap;
-   justify-content: center;
-}
-.imageblock{
-    width: 200px;
-    height: 260px;
-    padding: 20px;
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-size: cover;
-}
-.imageblock--tall{
-    height: 300px;
-    width: 200px;
-}
-.imageblock__caption{
-    text-transform: uppercase;
-    color: var(--white);
-    font-size: xx-large;
-    margin-bottom: 20px;
-    position: relative;
-    top: 230px;
-    background-color: rgba(0,0,0,0.5);
-    width: 240px;
-    padding: 5px 0px 5px 0px;
-    margin: 0px -20px 0px -20px; 
-}
-.imageblock__caption::before{
-    content: ">";
-    position: relative;
-    bottom: 2px;
-}
-.imageblock__caption::after{
-    content: "<";
-    position: relative;
-    bottom: 2px;
-}
-.imageblock:hover .imageblock__caption::after,.imageblock:hover .imageblock__caption::before{
-    display: none;
-}
-.imageblock__text{
-    color: var(--white);
-    margin: 5px;
-    opacity: 0%;
-}
-.imageblock__text--last{
-    margin-top: 50px;
-}
-.imageblock:hover .imageblock__text{
-    opacity: 1;
-    transition: 1s ease-in;
-}
-.imageblock:hover .imageblock__line{
-    opacity: 0.4;
-    transition: 1s;
-}
+    /* Logo + description */
+    .logo--link {
+        color: var(--black);
+        text-decoration: none;
+        margin-top: 15px;
+    }
 
-.imageblock:hover .imageblock__caption{
-    top: 0;
-    transition: 1s;
-    background-color: rgba(0,0,0,0);
-}
+    .logo {
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        margin: 0px 15px 0px 15px;
+    }
 
-.imageblock__line{
-    content: "";
-    background-color: var(--white);
-    opacity: 40%;
-    width: 50px;
-    height: 3px;
-    display: inline-block;  
-    position: relative;
-    bottom: 2px;
-    opacity: 0;
-}
-/* FIRST SECTION */
-#ytplayer{
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-    aspect-ratio: 16/9;
-}
-/* THIRD SECTION */
-.section--third{
-    background-color: var(--light_gray);
-    margin: 10px 0px 10px 0px;
-    padding-bottom: 60px;
-}
+    .logo__desc {
+        margin-top: 2px;
+        text-align: center;
+    }
+
+    .logo__heading {
+        text-align: center;
+        margin: 0px 0px 5px 0px;
+    }
+
+    .logo__img {
+        width: 50px;
+        height: 80px;
+        margin: 0px 2px 0px 10px;
+    }
+
+    .logo__title {
+        display: block;
+        width: fit-content;
+    }
+
+    .logo_heading {
+        margin: 2px;
+    }
+
+    /* NAVBAR */
+    .nav {
+        display: flex;
+        list-style: none;
+        border-bottom: 2px solid var(--dark_blue);
+        padding-left: 75px;
+        justify-content: center;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 9;
+        background-color: var(--white);
+        padding: 5px;
+    }
+
+    .nav__item--link {
+        color: var(--black);
+        text-decoration: none;
+        margin-top: 15px;
+    }
+
+    .nav__item {
+        margin: 0% 2% 0% 2%;
+        font-size: 19px;
+    }
 
 
-/* CARDS OF EVENTS */
-.imageblock--afirst{
-    background-image: url("../images/hra_uvnitr_zakladni_skole.webp");
-   }
-.imageblock--afirst:hover, .imageblock--afirst:active{
-    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.6)), url("../images/hra_uvnitr_zakladni_skole.webp");
-    transition: 20s ease;
-    cursor: pointer;
-}
-.imageblock--asecond{
-    background-image: url("../images/vandr_vylet_batohy_vetrna_elektrarna.webp");
-   }
-.imageblock--asecond:hover, .imageblock--asecond:active{
-    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.6)), url("../images/vandr_vylet_batohy_vetrna_elektrarna.webp");
-    transition: 1s;
-    cursor: pointer;
-}
-.imageblock--athird{
-    background-image: url("../images/letni_tabor.webp");
-}
-.imageblock--athird:hover, .imageblock--athird:active{
-    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.6)), url("../images/letni_tabor.webp");
-    transition: 1s;
-    cursor: pointer;
-}
-/* CARDS OF QUALITIES */
-.imageblock--bfirst{
-    background-image: url("../images/chlapec_jde_poslepu_po_lane.webp");
-   }
-.imageblock--bfirst:hover, .imageblock--bfirst:active{
-    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.6)), url("../images/chlapec_jde_poslepu_po_lane.webp");
-    transition: 1s;
-    cursor: pointer;
-}
-.imageblock--bsecond{
-    background-image: url("../images/nocni_hlidka_na_tabore.webp");
-   }
-.imageblock--bsecond:hover, .imageblock--bsecond:active{
-    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.6)), url("../images/nocni_hlidka_na_tabore.webp");
-    transition: 1s;
-    cursor: pointer;
-}
-.imageblock--bthird{
-    background-image: url("../images/nafukovaci_kanoe_deti.webp");
-}
-.imageblock--bthird:hover, .imageblock--bthird:active{
-    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.6)), url("../images/nafukovaci_kanoe_deti.webp");
-    transition: 1s;
-    cursor: pointer;
-}
-.imageblock--bfourth{
-    background-image: url("../images/deti_opekani_na_ohni.webp");
-}
-.imageblock--bfourth:hover, .imageblock--bfourth:active{
-    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.6)), url("../images/deti_opekani_na_ohni.webp");
-    transition: 1s;
-    cursor: pointer;
-}
-/* FITH SECTION */
-.section--fifth{
-    margin: 0px 0px 0px 0px;
-    background-color: var(--light_gray);
-}
-/* FORM */
-.form__heading{
-    text-align: center;
-}
-.form__label{
-    text-align: center;
-}
-.form{
-    display: flex;
-    flex-direction: column;
-    padding: 10px; 
-}
-.form__input {
-    border: solid var(--black) 2px;
-    padding: 4px;
-    display: block;
-    margin: 5px auto;
-}
-.form__button {
-    border: solid var(--light_blue) 2px;
-    background-color: var(--light_blue);
-    color: var(--white);
-    padding: 4px 10px 4px 10px;
-    margin: 10px;
-    text-transform: uppercase;
-    display: block;
-    margin: 5px auto;
-    cursor: pointer;
-}
 
-/* FOOTER */ 
-.footer{
-    display: flex; 
-    list-style: none;
-    border-top: 2px solid var(--dark_blue); 
-    flex-direction: column;
-    background-color: var(--gray);
-    color: var(--white);
-    text-align: center;
-}
-.footer__text>a{
-    color: var(--white);
-}
+    .nav__item--icon {
+        margin: 0px 5px 0px 5px;
+    }
 
-  
+    .nav__item--firsticon {
+        margin-left: 5%;
+    }
+
+    .nav__item__img--icon {
+        width: 30px;
+    }
+
+    .nav--button {
+        border: solid var(--light_blue) 2px;
+        background-color: var(--light_blue);
+        color: var(--white);
+        text-transform: uppercase;
+        cursor: pointer;
+        text-decoration: none;
+        padding: 5px;
+    }
+
+    /* CONTENT */
+
+    body {
+        font-family: 'Dosis', sans-serif;
+        margin: 20px 0px 0px 0px;
+        font-size: 17px;
+    }
+
+    .section {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: 10px;
+    }
+
+    .section__text {
+        margin: 0px 10px 0px 10px;
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .imageblock {
+        width: 200px;
+        height: 260px;
+        padding: 20px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .imageblock--tall {
+        height: 300px;
+        width: 200px;
+    }
+
+    .imageblock__caption {
+        text-transform: uppercase;
+        color: var(--white);
+        font-size: xx-large;
+        margin-bottom: 20px;
+        position: relative;
+        top: 230px;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 240px;
+        padding: 5px 0px 5px 0px;
+        margin: 0px -20px 0px -20px;
+    }
+
+    .imageblock__caption::before {
+        content: ">";
+        position: relative;
+        bottom: 2px;
+    }
+
+    .imageblock__caption::after {
+        content: "<";
+        position: relative;
+        bottom: 2px;
+    }
+
+    .imageblock:hover .imageblock__caption::after,
+    .imageblock:hover .imageblock__caption::before {
+        display: none;
+    }
+
+    .imageblock__text {
+        color: var(--white);
+        margin: 5px;
+        opacity: 0%;
+    }
+
+    .imageblock__text--last {
+        margin-top: 20%;
+    }
+
+    .imageblock:hover .imageblock__text {
+        opacity: 1;
+        transition: 1s ease-in;
+    }
+
+    .imageblock:hover .imageblock__line {
+        opacity: 0.4;
+        transition: 1s;
+    }
+
+    .imageblock:hover .imageblock__caption {
+        top: 0;
+        transition: 1s;
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    .imageblock__line {
+        content: "";
+        background-color: var(--white);
+        opacity: 40%;
+        width: 50px;
+        height: 3px;
+        display: inline-block;
+        position: relative;
+        bottom: 2px;
+        opacity: 0;
+    }
+
+    /* ZEROTH SECTION */
+    .zeroth--fifth {
+        padding-bottom: 5%;
+        margin: -15px 0px 0px 0px;
+        background-color: var(--light_gray);
+    }
+
+    /* FORM */
+    .form__heading {
+        text-align: center;
+    }
+
+    .form__label {
+        text-align: center;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .form__input {
+        border: solid var(--black) 2px;
+        padding: 4px;
+        display: block;
+        margin: 5px auto;
+    }
+
+    .form__button {
+        border: solid var(--light_blue) 2px;
+        background-color: var(--light_blue);
+        color: var(--white);
+        padding: 4px 10px 4px 10px;
+        margin: 10px;
+        text-transform: uppercase;
+        display: block;
+        margin: 5px auto;
+        cursor: pointer;
+    }
+
+    .red {
+        color: var(--red);
+    }
+
+    .green {
+        color: var(--green);
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    /* FIRST SECTION */
+    #ytplayer {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        aspect-ratio: 16/9;
+    }
+
+    /* THIRD SECTION */
+    .section--third {
+        background-color: var(--light_gray);
+        margin: 10px 0px 10px 0px;
+        padding-bottom: 60px;
+    }
+
+
+    /* CARDS OF EVENTS */
+    .imageblock--afirst {
+        background-image: url("../images/hra_uvnitr_zakladni_skole.webp");
+    }
+
+    .imageblock--afirst:hover,
+    .imageblock--afirst:active {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url("../images/hra_uvnitr_zakladni_skole.webp");
+        transition: 20s ease;
+        cursor: pointer;
+    }
+
+    .imageblock--asecond {
+        background-image: url("../images/vandr_vylet_batohy_vetrna_elektrarna.webp");
+    }
+
+    .imageblock--asecond:hover,
+    .imageblock--asecond:active {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url("../images/vandr_vylet_batohy_vetrna_elektrarna.webp");
+        transition: 1s;
+        cursor: pointer;
+    }
+
+    .imageblock--athird {
+        background-image: url("../images/letni_tabor.webp");
+    }
+
+    .imageblock--athird:hover,
+    .imageblock--athird:active {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url("../images/letni_tabor.webp");
+        transition: 1s;
+        cursor: pointer;
+    }
+
+    /* CARDS OF QUALITIES */
+    .imageblock--bfirst {
+        background-image: url("../images/chlapec_jde_poslepu_po_lane.webp");
+    }
+
+    .imageblock--bfirst:hover,
+    .imageblock--bfirst:active {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url("../images/chlapec_jde_poslepu_po_lane.webp");
+        transition: 1s;
+        cursor: pointer;
+    }
+
+    .imageblock--bsecond {
+        background-image: url("../images/nocni_hlidka_na_tabore.webp");
+    }
+
+    .imageblock--bsecond:hover,
+    .imageblock--bsecond:active {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url("../images/nocni_hlidka_na_tabore.webp");
+        transition: 1s;
+        cursor: pointer;
+    }
+
+    .imageblock--bthird {
+        background-image: url("../images/nafukovaci_kanoe_deti.webp");
+    }
+
+    .imageblock--bthird:hover,
+    .imageblock--bthird:active {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url("../images/nafukovaci_kanoe_deti.webp");
+        transition: 1s;
+        cursor: pointer;
+    }
+
+    .imageblock--bfourth {
+        background-image: url("../images/deti_opekani_na_ohni.webp");
+    }
+
+    .imageblock--bfourth:hover,
+    .imageblock--bfourth:active {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url("../images/deti_opekani_na_ohni.webp");
+        transition: 1s;
+        cursor: pointer;
+    }
+
+
+    /* FOOTER */
+    .footer {
+        display: flex;
+        list-style: none;
+        border-top: 2px solid var(--dark_blue);
+        flex-direction: column;
+        background-color: var(--gray);
+        color: var(--white);
+        text-align: center;
+    }
+
+    .footer__text>a {
+        color: var(--white);
+    }

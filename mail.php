@@ -21,7 +21,7 @@ if (isset($_POST['email']) && !empty($_POST['email'])) {
       'X-Mailer: PHP/' . phpversion();
     if (mb_send_mail($to, $subject, $message, $headers)) {
       // Email was sent successfully, set cookie for 1 day
-      //setcookie('form_submitted', 'true', time() + 86400);
+      setcookie('form_submitted', 'true', time() + 86400);
       header('Location: http://nabor.tomorion.cz/?success=1'); exit;
     } else {
       // There was an error sending the email

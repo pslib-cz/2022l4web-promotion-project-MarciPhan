@@ -1,5 +1,3 @@
-
-
 @media screen and (min-width: 800px) {
     .nav__item{
         font-size: 20px;
@@ -7,13 +5,14 @@
     .section__text, .section--fifth .form__button,.section--fifth .form__input{
         font-size: 20px;
     }
-
-    .swiffy-slider{
+   .swiffy-slider{
+    height: 300px;
+   }
+    .slidercontainer{
         margin-left: auto;
         margin-right: auto;
-        height: 300px;
-
-        width: 90% !important;
+      overflow-y: hidden;
+        width: 80%;
       }
       .slide__img {
         margin-left: 100px;}
@@ -21,9 +20,7 @@
         display: flex;
        
     }
-    .slider-indicators{
-        background-color: #f3f3f3;
-    }
+    
     .section__heading, .section--fifth .form__heading{
         font-size: 2em;
     }
@@ -35,23 +32,35 @@
 
   }
   
-@media screen and (min-width: 1280px) {
+ @media screen and (min-width: 1280px) {
     .slide__img {
-        scale: 1.5;
-        margin-right: 50px;
+        scale: 1.4;
+       
     }
-    .swiffy-slider{
-            width: 72% !important;
+    .slidercontainer{
+        margin-left: auto;
+        margin-right: auto;
+        overflow-y: hidden;
+        width: 60% !important;
         }
     .slide__text, .author--sign{
             font-size: 20px;
     }
-    .section--fifth .form{
-        justify-content: center !important;
-    }
-    .modal .modal-dialog{
-        scale: 1.5;
+    .form{
+        justify-content: center;
         left: 40%;
         width: auto;
+        overflow-x: hidden !important;
+    }
+    .form__label{
+font-size: 25px;
+    }
+    .form__input{
+        scale: 1.5;
+        margin-top: 10px;
+    }
+    .form__button{
+        margin-top: 20px !important;
+        scale: 1.5 !important;
     }
 }
